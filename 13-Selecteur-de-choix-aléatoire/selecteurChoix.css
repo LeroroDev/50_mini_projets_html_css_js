@@ -44,7 +44,7 @@ textarea:focus {
   outline: none;
 }
 
-.tag {
+.choice {
   background-color: #f0932b;
   color: #fff;
   border-radius: 50px;
@@ -54,6 +54,6 @@ textarea:focus {
   display: inline-block;
 }
 
-.tag.highlight {
+.choice.highlight {
   background-color: #273c75;
 }

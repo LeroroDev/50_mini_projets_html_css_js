@@ -1,71 +1,99 @@
-const tagsEl = document.getElementById("tags");
+// Récupère l'élément qui affichera les choix
+const choicesEl = document.getElementById("choice");
+
+// Récupère la zone de texte
 const textarea = document.getElementById("textarea");
 
+// Met le focus sur la zone de texte
 textarea.focus();
 
+// Event listener sur keyup sur la zone de texte
 textarea.addEventListener("keyup", (e) => {
-  createTags(e.target.value);
+  // Crée des choix à partir du texte entré dans la zone de texte
+  createChoices(e.target.value);
 
+  // Si la touche "Entrée" est activée
   if (e.key === "Enter") {
+    // Efface la zone de texte
     setTimeout(() => {
       e.target.value = "";
     }, 10);
 
+    // Sélectionne aléatoirement un choix
     randomSelect();
   }
 });
 
-function createTags(input) {
-  const tags = input
+/**
+ * Fonction pour créer des choix à partir du texte entré dans la zone de texte
+ * @param {String} input
+ *  
+ */
+function createChoices(input) {
+  // Sépare le texte entré en choix en utilisant le caractère "+"
+  const choices = input
     .split("+")
-    .filter((tag) => tag.trim() !== "")
-    .map((tag) => tag.trim());
+    .filter((choice) => choice.trim() !== "")
+    .map((choice) => choice.trim());
 
-  tagsEl.innerHTML = "";
+  // Efface l'élément qui affiche les choix
+  choicesEl.innerHTML = "";
 
-  tags.forEach((tag) => {
-    const tagEl = document.createElement("span");
-    tagEl.classList.add("tag");
-    tagEl.innerText = tag;
-    tagsEl.appendChild(tagEl);
+  // Ajoute un élément "span" pour chaque choix et l'affiche dans l'élément choicesEl
+  choices.forEach((choice) => {
+    const choiceEl = document.createElement("span");
+    choiceEl.classList.add("choice");
+    choiceEl.innerText = choice;
+    choicesEl.appendChild(choiceEl);
   });
 }
 
+// Fonction pour sélectionner aléatoirement un choix
 function randomSelect() {
+  // Nombre de fois que les choix seront mis en surbrillance avant la sélection
   const times = 30;
 
+  // ajout intervalle pour la surbrillance 
   const interval = setInterval(() => {
-    const randomTag = pickRandomTag();
+    const randomchoice = pickRandomchoice();
 
-    if (randomTag !== undefined) {
-      highlightTag(randomTag);
+    if (randomchoice !== undefined) {
+      highlightchoice(randomchoice);
 
       setTimeout(() => {
-        unHighlightTag(randomTag);
+        unHighlightchoice(randomchoice);
       }, 100);
     }
   }, 100);
 
+  // Met fin à la boucle d'intervalle
   setTimeout(() => {
     clearInterval(interval);
 
+    // Met en surbrillance le choix final 
     setTimeout(() => {
-      const randomTag = pickRandomTag();
+      const randomchoice = pickRandomchoice();
 
-      highlightTag(randomTag);
+      highlightchoice(randomchoice);
     }, 100);
   }, times * 100);
 }
 
-function pickRandomTag() {
-  const tags = document.querySelectorAll(".tag");
-  return tags[Math.floor(Math.random() * tags.length)];
+/**
+ * Fonction pour choisir un choix au hasard
+ * @returns {Number}
+ */
+function pickRandomchoice() {
+  const choices = document.querySelectorAll(".choice");
+  return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function highlightTag(tag) {
-  tag.classList.add("highlight");
+// Fonction pour mettre en surbrillance
+function highlightchoice(choice) {
+  choice.classList.add("highlight");
 }
 
-function unHighlightTag(tag) {
-  tag.classList.remove("highlight");
+// Fonction pour enlever la surbrillance 
+function unHighlightchoice(choice) {
+  choice.classList.remove("highlight");
 }
