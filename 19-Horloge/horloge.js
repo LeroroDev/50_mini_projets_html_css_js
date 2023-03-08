@@ -46,7 +46,7 @@ function setTime() {
     // Affichage de la date avec un cercle autour du jour du mois
     dateEl.innerHTML = `${days[day]}, <span class="circle">${date}</span> ${months[month]}`;
 }
-//Fonction utilisée pour calculer l'angle de rotation des aiguilles en fonction du temps
+//Fonction utilisée pour calculer l'angle de rotation des aiguilles en fonction du temps (vu sur stack overflow)
 const scale = (num, in_min, in_max, out_min, out_max) => {
     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 };
