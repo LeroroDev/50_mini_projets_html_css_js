@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courgette', sans-serif;
+    height: 100vh;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-slide {
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slide>div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.left-slide h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+
+.redSlide {
+    background-color: #ff0000;
+}
+
+.slvrSlide {
+    background-color: #c0c0c0;
+}
+
+.gldSlide {
+    background-color: #daa520;
+}
+
+.grnSlide {
+    background-color: #006400;
+}
+
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.right-slide>div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+.gldRight {
+    background-image: url('https://images.unsplash.com/photo-1595594448400-cf1dba1ea953?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+}
+
+.grnRight {
+    background-image: url('https://images.unsplash.com/photo-1658973139296-c064ac0d900b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80')
+}
+
+.slvrRight {
+    background-image: url('https://i.ebayimg.com/images/g/wJQAAOSw2aJjnfbw/s-l1600.jpg')
+}
+
+.redRight {
+    background-image: url('https://cdn.pixabay.com/photo/2016/07/17/01/37/gameboy-1523077_960_720.jpg')
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
+
+button:hover {
+    color: #222;
+}
+
+button:focus {
+    outline: none;
+}
+
+.slider-container .action-buttons button {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+}
+
+.slider-container .action-buttons .down-button {
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
