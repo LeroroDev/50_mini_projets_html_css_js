@@ -19,7 +19,7 @@ body {
 div {
   position: absolute;
   bottom: 20px;
-  background: rgba(0, 0, 0, 0.1);
+  background: #0000001a;
   padding: 10px 20px;
   font-size: 18px;
 }
@@ -28,7 +28,7 @@ input {
   width: 50px;
   padding: 5px;
   font-size: 18px;
-  background-color: darkgray;
+  background-color: #a9a9a9;
   border: none;
   text-align: center;
 }
