@@ -13,6 +13,7 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: #ccc;
 }
 
 .toggle-container {
@@ -28,7 +29,7 @@ body {
 
 .label {
   position: relative;
-  background-color: #d0d0d0;
+  background-color: darkgrey;
   border-radius: 50px;
   cursor: pointer;
   display: inline-block;
@@ -38,7 +39,7 @@ body {
 }
 
 .toggle:checked + .label {
-  background-color: darkcyan;
+  background-color: lightskyblue;
 }
 
 .ball {
