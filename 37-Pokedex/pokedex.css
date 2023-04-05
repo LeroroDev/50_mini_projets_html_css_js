@@ -18,7 +18,7 @@ h1{
     text-align: center;
     border-radius: 5px;
      border-image-slice: 1;
-    border-image-source: linear-gradient(45deg, #000000 25%, transparent 25%, transparent 50%, #000000 50%, #000000 75%, transparent 75%, transparent); */
+    border-image-source: linear-gradient(45deg, #000000 25%, transparent 25%, transparent 50%, #000000 50%, #000000 75%, transparent 75%, transparent); 
 }
 
 .pokemon-card img {
