@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Liste des Pokémons</title>
+    <link rel="stylesheet" href="pokedex.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="pokedex.js" defer></script>
+  </head>
+  <body>
+    <h1>Pokédex</h1>
+    <label for="generation">Filtrer par génération:</label>
+    <select id="generation">
+      <option value="">Toutes les générations</option>
+      <option value="1">1ère génération</option>
+      <option value="2">2ème génération</option>
+      <option value="3">3ème génération</option>
+      <option value="4">4ème génération</option>
+      <option value="5">5ème génération</option>
+      <option value="6">6ème génération</option>
+      <option value="7">7ème génération</option>
+      <option value="8">8ème génération</option>
+    </select>
+    <div id="pokemon-cards"></div>
+
+  </body>
+</html>
