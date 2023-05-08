@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="user_search.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Filtre avec API randomuser</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h4 class="title">Filtre des User</h4>
+        <small class="subtitle">Recherche par nom ou pays/ville</small>
+        <input type="text" id="filter" placeholder="Search">
+      </header>
+
+      <ul id="result" class="user-list">
+        <li>
+          <h3>Chargement...</h3>
+        </li>
+      </ul>
+    </div>
+    <script src="user_search.js"></script>
+  </body>
+</html>
